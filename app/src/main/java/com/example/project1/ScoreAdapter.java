@@ -1,5 +1,6 @@
 package com.example.project1;
 
+import android.app.Application;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ScoreAdapter extends RecyclerView.Adapter<ScoreViewHolder> {
+
+    Application application;
+    MainViewModel mainViewModel;
+
+    public ScoreAdapter(Application application, MainViewModel mainViewModel)
+    {
+        this.application = application;
+        this.mainViewModel = mainViewModel;
+    }
 
     @NonNull
     @Override
@@ -18,13 +28,17 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreViewHolder> {
         return new ScoreViewHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ScoreViewHolder holder, int position) {
+        //String score = mainViewModel.getPosition(position);
+        //holder.scoreText.setText(score);
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+
+        return 1;
     }
 }

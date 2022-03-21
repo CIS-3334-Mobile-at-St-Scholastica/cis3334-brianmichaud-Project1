@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     ScoreAdapter scoreAdapter;
 
-
-
     int score = 0;
     int hole = 1;
 
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
          * Set up recycler view
          */
         scoresRecyclerView = findViewById(R.id.scoresRecyclerView);
-        //scoreAdapter = new ScoreAdapter(getApplication(), mainViewModel);
+        scoreAdapter = new ScoreAdapter(getApplication(), mainViewModel);
         scoresRecyclerView.setAdapter(scoreAdapter);
         scoresRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
